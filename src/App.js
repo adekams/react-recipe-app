@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Recipe from "./components/Recipe";
 
 function App() {
   const APP_ID = "e548faf6";
@@ -46,6 +46,20 @@ function App() {
         <button>Get Recipe</button>
       </form>
 
+      <div className="recipes-list">
+        {recipes.map((recipe, i) => {
+          return (
+            <Recipe
+              key={i}
+              title={recipe.recipe.label}
+              calories={recipe.recipe.calories}
+              dish={recipe.recipe.dishType}
+              image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
