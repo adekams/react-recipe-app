@@ -13,11 +13,11 @@ const Recipe = ({ title, calories, image, ingredients, dish }) => {
           <strong>Calories:</strong> {calories}
         </p>
       </div>
-      <ol>
+      <ul style={{ listStyleType: "square" }}>
         {ingredients.map((ingredient, i) => {
           return <li key={i}>{ingredient.text}</li>;
         })}
-      </ol>
+      </ul>
     </div>
   );
 };
